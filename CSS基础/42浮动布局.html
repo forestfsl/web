@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.header,.main,.footer{
+			width: 500px;
+
+		}
+		.header,.footer{
+			height:100px;
+			background: #000;
+			margin:10px 0;
+		}
+		/*如果不给父盒子高度，浮动会有问题，所以我们要防止在不给父盒子高度的时候，出现异常
+解决方法：方法一：在最后一个浮动元素后添加标签；<div style="clear:both;"></div>
+         方法二：给父元素使用overflow:hidden;如果有内容出了盒子不能用这个方法
+		*/
+		.main{
+			/*height: 300px;*/
+			background: #eee;
+			/*方法二*/
+			/*overflow: hidden;*/
+		}
+		.content{
+			height: 300px;
+			width: 300px;
+			background: orange;
+			float: left;
+		}
+		.sidebar{
+			height: 300px;
+			width: 190px;
+			background: green;
+			float: right;
+
+		}
+		.footer{
+			
+
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		/*兼容ie浏览器*/
+		.clearfix{
+			zoom:1;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="main clearfix">
+		<div class="content"></div>
+		<div class="sidebar"></div>
+		<!-- 额外标签法 -->
+		<!-- <div style="clear:both;"></div> -->
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
