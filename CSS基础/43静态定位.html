@@ -36,12 +36,14 @@
 			right: 100px;
 		}
 
+
+/*给行内使用绝对定位之后，转换为行内块，不推荐使用*/
 		.baby{
          position: absolute;
          background: yellow;
          width: 100px;
          height: 100px;
-         /*0-99 调整层级关系*/
+         /*0-999 调整层级关系,值越大，元素越在上面*/
          z-index: 2;
 		}
 		.baby1{
