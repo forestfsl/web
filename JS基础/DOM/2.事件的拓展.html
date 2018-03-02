@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" onclick="fn()">
+		
+	</div>
+	<script type="text/javascript">
+		//体验事件
+
+		
+
+		//1.事件源（引发后续事件的标签）
+		//2.事件(js已经定义好，直接使用)
+		//3.事件驱动程序(对央视和html操作)（DOM 操作)
+
+		//需求：点击盒子，弹出对话框
+		//步骤：
+		//1.获取事件源(document.getElemmentById("box"))
+		var div = document.getElementById("box");
+		//获取事件源的第二种方式
+		// var arr1 = document.getElementsByTagName("box");
+		// var arr2 = document.getElementsByClassName("class");
+		// var arr3 = doccument.getElementsByName("name");
+		//2.绑定事件（事件源.事件 = function(){事件}
+		div.onclick = function fn() {
+			div.style.width = "200px";
+			div.style.height = "200px";
+			div.style.backgroundColor = "red";
+		}
+
+
+		//对应<div id="box" onclick="fn()">
+		// div.onclick = fn;fn不能写括号，写括号就有返回值了
+		// function fn () {
+		// //3.书写事件驱动程序
+		// 	alert(1)
+
+		// }
+
+	</script>
+</body>
+</html>
